@@ -3,15 +3,19 @@ server:
 
 spring:
     datasource:
-        url:
-        username: 
-        password: 
-        driver-class-name: 
+        url: jdbc:mysql://localhost:3306/bootjpa?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
 
     jpa:
         hibernate:
             ddl-auto: create
         properties:
             hibernate:
-                showsql: ture
-                formatsql: ture
+ #               show-sql: ture
+                format-sql: ture
+
+logging:
+  level:
+    '[org.hibernate.sql]': debug
