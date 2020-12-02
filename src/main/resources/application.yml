@@ -12,8 +12,10 @@ spring:
         hibernate:
             ddl-auto: create
         properties:
-            hibernate:
-        show_sql: true
+          hibernate:
+            '[format_sql]': true 
+            # 이렇게 해주니까 format_sql 경고줄 사라지고 잘 처리됨... 이유는 모르겠음
+#        show_sql: true
 
 logging:
   level:
