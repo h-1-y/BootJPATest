@@ -9,11 +9,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import jpabook.jpashop.domain.item.Item;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // 생성메소드가 있기때문에 유지보수와 통일성을 위해 다른 class에서 생성자 호출을 막아둔다
 public class OrderItem {
 
     @Id
@@ -32,5 +35,32 @@ public class OrderItem {
     private int orderPrice;
 
     private int count;
+
+    // 생성 메서드
+    public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
+        
+        OrderItem orderItem = new OrderItem();
+        orderItem.setItem(item);
+        orderItem.setOrderPrice(orderPrice);
+        orderItem.setCount(count);
+
+        item.removeStock(count);
+        return orderItem;
+    }
+
+    // 비즈니스 로직 추가!!
+	public void cancel() {
+
+        getItem().addStock(count);
+
+	}
+    
+    // 조회 로직
+    
+
+    // 주문상품 전체 가격 조회
+	public int getTotalPrice() {
+		return getOrderPrice() * getCount();
+	}
 
 }

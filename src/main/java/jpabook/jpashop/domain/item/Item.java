@@ -54,7 +54,7 @@ public abstract class Item { // 추상클래스
             throw new NotEnoughStockExcetion("need more stock");
         }
 
-        this.removeStock(quantity);
+        this.stockQuantity = restStock;
 
     }
 
