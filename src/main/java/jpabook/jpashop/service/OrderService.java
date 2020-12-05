@@ -1,7 +1,5 @@
 package jpabook.jpashop.service;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -64,9 +62,5 @@ public class OrderService {
 
     }
 
-    // 검색
-    // public List<Order> findOrders(OrderSearch orderSearch) {
-    //     return orderRepository.findAll(orderSearch);
-    // }
 
 }
