@@ -29,10 +29,10 @@ public class MemberController {
 
     }
 
-    @PostMapping("members/new") // @Valid 어노테이션과 BindingResult는 데이터 검증기능을 하는 녀석들이다.
+    @PostMapping("members/new") // @Valid 어노테이션과 BindingResult는 데이터 검증기능을 하는 녀석들이다 나중에 자세히 알아보자...!!
     public String create(@Valid MemberForm memberForm, BindingResult result) {
 
-        if (result.hasErrors()) {
+        if (result.hasErrors()) { // 에러가 있으면 return 경로로 넘겨준다
             return "members/createMemberForm";
         }
 
