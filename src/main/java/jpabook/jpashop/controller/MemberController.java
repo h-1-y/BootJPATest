@@ -19,6 +19,7 @@ public class MemberController {
         model.addAttribute("memberForm", new MemberForm());
 
         return "members/createMemberForm";
+        
 
     }
 
