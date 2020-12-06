@@ -5,7 +5,7 @@ import javax.persistence.Embeddable;
 import lombok.Getter;
 
 @Embeddable // JPA의 내장타입 어딘가에 내장이 될수있다..!
-@Getter 
+@Getter
 public class Address {
 
     private String city;
