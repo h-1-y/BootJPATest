@@ -21,6 +21,8 @@ public class ItemRepository {
         if(item.getId() == null) {
             em.persist(item); // 
         } else {
+            // 병합 !! 병합은 사용하는 모든 속성이 변경된다. 병합시 값이 없으면 Null로 업데이트를 할 위험이 있다.
+            // merge는 속성을 선택하여 update하기에 제한적 변경감지를 많이 쓴다고한다...
             em.merge(item); // Update와 비슷하다고
         }
 
