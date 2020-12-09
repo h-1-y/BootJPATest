@@ -23,7 +23,7 @@ public class ItemService {
     }
 
     // 변경감지 dirty checking 
-    // Transaction이 커밋되면 JPA에서 플러쉬를 해주고 영속성 컨텍스트의 바뀐것을 찾아 Update Query 해준다 변경감지방식 채택 권장!!
+    // Transaction이 커밋되면 JPA에서 플러쉬를 해주고 영속성 컨텍스트의 바뀐 속성을 찾아 Update Query 해준다 변경감지방식 채택 권장!!
     // Service단 내에서 가능하면 Setter 쓰지말고 Entity안에서 바로 추적할수 있는 메소드를 만들어라!! ex) Book.java Entity class에 만들어둔 예시 메소드 참고!
     @Transactional
     //public void updateItem(Long itemId, Book form) {
